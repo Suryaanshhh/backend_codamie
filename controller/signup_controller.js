@@ -8,9 +8,9 @@ const SignUp = async (req, res) => {
   try {
     const { name, email, password } = req.body;
     const newotp = generateOTP();
-    const saltRounds = 10;
+    
 
-    const hash = await bcrypt.hashSync(password, saltRounds);
+    const hash = await bcrypt.hashSync(password, 15);
     const response = await User.create({
       name: name,
       email: email,

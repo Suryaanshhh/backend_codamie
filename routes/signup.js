@@ -1,7 +1,11 @@
 import express from "express";
- const router = express.Router();
+const router = express.Router();
 
- import SignUp from "../controller/signup_controller.js";  
- router.post("/register",SignUp);
+import SignUp from "../controller/signup_controller.js";
+import Verification from "../controller/email_verification.js"
 
- export default router;
+
+router.post("/register", SignUp);
+router.post("/verification",Verification);
+
+export default router;

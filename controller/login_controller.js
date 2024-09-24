@@ -37,3 +37,5 @@ const login = async (req, res) => {
     console.log(err);
   }
 };
+
+export default login;

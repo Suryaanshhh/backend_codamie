@@ -5,10 +5,12 @@ const app = express();
 import { configDotenv } from "dotenv";
 configDotenv()
 
-import router from "../backend_codamie/routes/signup.js";
+import SignupRouter from "../backend_codamie/routes/signup.js";
+import LoginRoutes from "../backend_codamie/routes/login.js";
 
 app.use(bodyParser.json({ extended: false }));
-app.use(router)
+app.use(SignupRouter)
+app.use(LoginRoutes);
 mongoose
   .connect(process.env.DB_URL)
   .then(() => {
